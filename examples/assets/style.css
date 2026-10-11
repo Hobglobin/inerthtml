@@ -1,0 +1,9 @@
+@font-face { font-family: Heading; src: url("heading.ttf"); }
+body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; color: #1d2433; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+h1, h2 { font-family: Heading, serif; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: #fff; border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.kpi { font-size: 34px; font-weight: 700; color: #1f6feb; }
+.tracker { background: url("logo.png") no-repeat right top; min-height: 40px; }
+details summary { cursor: pointer; font-weight: 600; }

