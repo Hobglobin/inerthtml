@@ -97,16 +97,36 @@ $ inerthtml verify suspicious.html
 
 Use `--json` for CI, mail filters or scripts.
 
-## Use it with AI agents
+## Use it in Claude
 
-**Claude Code / Claude skills:** copy [`skills/inerthtml`](skills/inerthtml) into your
-skills folder. When Claude makes an HTML report you plan to share, it will
-build an inert copy and check it.
+Add the inerthtml skill once, and Claude takes care of the rest. Ask for "a
+dashboard I can email to my team" and you get back a file that's safe to send.
+Ask "is this attachment safe to open?" and Claude checks it without opening it
+and tells you what it found, in plain words. Nothing to install on your computer.
 
-**Any agent:** add this to your system prompt or project instructions:
+Download the file for where you use Claude from the
+[latest release](https://github.com/Hobglobin/inerthtml/releases/latest):
 
-> When you create an HTML file meant to be shared, render charts as SVG, then
-> run `inerthtml build <file>` and share the resulting `.inert.html` file.
+- **Claude (web or desktop app):** download `inerthtml-skill.zip`, then upload it
+  in Claude's settings under Skills. Code execution must be turned on.
+  [How to add a skill](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+- **Claude Cowork:** download `inerthtml.plugin` and add it as a plugin.
+- **Whole team (Team and Enterprise admins):** upload `inerthtml-skill.zip` once
+  under Organization settings to give it to everyone.
+  [Admin guide](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization).
+- **Claude Code:** copy [`skills/inerthtml`](skills/inerthtml) into
+  `~/.claude/skills/`.
+
+If you have a lot of skills installed, Claude may not pick this one on its own.
+Start your request with "Use inerthtml to…".
+
+## Use it with other AI agents
+
+Add this to your system prompt or project instructions:
+
+> When you create an HTML file meant to be shared, draw charts as inline SVG
+> without JavaScript, then run `inerthtml build <file> --no-render` and share
+> the resulting `.inert.html` file.
 
 **Python:**
 
