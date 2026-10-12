@@ -1,6 +1,6 @@
 **inert** turns AI-generated HTML into one static file that is safe to share. It looks the same, opens in any browser and works offline, but it can't run scripts, load trackers or collect passwords. Anyone can check that with `inert verify`.
 
-![before and after](https://raw.githubusercontent.com/YOUR_GITHUB/inert/main/assets/hero.png)
+![before and after](https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/hero.png)
 
 ### Install
 
@@ -8,7 +8,7 @@
     playwright install chromium
     inert build report.html
 
-Or drop a file on the web checker: https://YOUR_GITHUB.github.io/inert/
+Or drop a file on the web checker: https://hobglobin.github.io/inerthtml/
 
 ### In this release
 

@@ -30,9 +30,9 @@ dev = ["pytest>=7"]
 inert = "inerthtml.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/YOUR_GITHUB/inert"
-Issues = "https://github.com/YOUR_GITHUB/inert/issues"
-Spec = "https://github.com/YOUR_GITHUB/inert/blob/main/SPEC.md"
+Homepage = "https://github.com/Hobglobin/inerthtml"
+Issues = "https://github.com/Hobglobin/inerthtml/issues"
+Spec = "https://github.com/Hobglobin/inerthtml/blob/main/SPEC.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/inerthtml"]

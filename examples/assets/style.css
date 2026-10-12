@@ -1,9 +1,36 @@
-@font-face { font-family: Heading; src: url("heading.ttf"); }
-body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; color: #1d2433; }
-.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
-h1, h2 { font-family: Heading, serif; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.card { background: #fff; border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-.kpi { font-size: 34px; font-weight: 700; color: #1f6feb; }
-.tracker { background: url("logo.png") no-repeat right top; min-height: 40px; }
-details summary { cursor: pointer; font-weight: 600; }
+@font-face { font-family: "Libre Franklin"; font-weight: 400; src: url("fonts/libre-franklin-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 600; src: url("fonts/libre-franklin-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "DM Sans"; font-weight: 400; src: url("fonts/dm-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; src: url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2"); }
+
+:root {
+  --charcoal: #16181B; --steel-dark: #30343A; --concrete-dark: #8E9399; --white-dark: #EDEEEF;
+  --canvas: #FFFFFF; --graphite: #EFEFEF; --steel: #D4D4D4; --concrete: #6B6B6B;
+  --fog: #333639; --ink: #1E2124; --signal: #C94A1C; --signal-dark-bg: #E85D2A;
+}
+body { font-family: "DM Sans", system-ui, sans-serif; font-size: 16px; line-height: 1.6; margin: 0; background: var(--canvas); color: var(--fog); }
+.masthead { background: var(--charcoal); border-bottom: 1px solid var(--steel-dark); }
+.masthead .inner, .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.masthead .inner { padding-top: 40px; padding-bottom: 48px; }
+.masthead img { height: 30px; display: block; margin-bottom: 40px; }
+.masthead h1 { color: var(--white-dark); max-width: 22ch; }
+.masthead .lead { color: var(--concrete-dark); max-width: 720px; margin: 16px 0 0; }
+.wrap { padding-top: 48px; padding-bottom: 64px; }
+h1, h2 { font-family: "Libre Franklin", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.035em; color: var(--ink); }
+h1 { font-size: 44px; line-height: 1.05; margin: 0; }
+h2 { font-size: 20px; line-height: 1.2; margin: 0 0 12px; }
+.eyebrow, .label { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow { color: var(--signal-dark-bg); margin: 0 0 16px; }
+.label { color: var(--concrete); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--steel); border: 1px solid var(--steel); }
+.card { background: var(--canvas); padding: 24px; }
+.kpi { font-family: "Libre Franklin", system-ui, sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.1; color: var(--ink); margin: 8px 0 4px; }
+.note { font-size: 14px; color: var(--concrete); margin: 0; }
+.tracker { background: var(--graphite) url("icon.png") no-repeat right 24px top 24px / 32px; min-height: 40px; }
+details summary { cursor: pointer; font-family: "Libre Franklin", system-ui, sans-serif; font-weight: 600; color: var(--ink); }
+a { color: var(--signal); }
+svg text { font-family: "DM Sans", system-ui, sans-serif; fill: var(--fog); font-size: 14px; }
+.signin { border: 1px solid var(--steel); }
+.signin input, .signin button { font: inherit; font-size: 14px; padding: 10px 12px; border: 1px solid var(--steel); border-radius: 0; }
+.signin button { background: var(--ink); color: var(--canvas); border-color: var(--ink); border-radius: 8px; padding: 10px 24px; }
+footer { font-size: 14px; color: var(--concrete); margin-top: 32px; }

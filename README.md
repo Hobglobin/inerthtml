@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YOUR_GITHUB/inert/main/assets/hero.png" alt="A sales report before and after inert: identical look, but 4 scripts, a login form, a tracking pixel and an iframe are gone, and verify passes." width="100%">
+  <img src="https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/hero.png" alt="A sample RFI workflow report before and after inert: identical look, but 4 scripts, a login form, a tracking pixel and an iframe are gone, and verify passes." width="100%">
 </p>
 
 <h1 align="center">inert</h1>
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://YOUR_GITHUB.github.io/inert/"><b>Check a file in your browser</b></a> ·
+  <a href="https://hobglobin.github.io/inerthtml/"><b>Check a file in your browser</b></a> ·
   <a href="SPEC.md">The inert/1 rules</a> ·
   <a href="#use-it-with-ai-agents">Use with AI agents</a>
 </p>
@@ -44,7 +44,7 @@ inert build report.html            # → report.inert.html
 inert verify report.inert.html     # ✓ PASS (exit code 1 on failure)
 ```
 
-Prefer not to install anything? **[Drop a file on the web checker](https://YOUR_GITHUB.github.io/inert/)**.
+Prefer not to install anything? **[Drop a file on the web checker](https://hobglobin.github.io/inerthtml/)**.
 It runs entirely in your browser and never uploads the file.
 
 ## What `inert build` does
@@ -63,7 +63,7 @@ It runs entirely in your browser and never uploads the file.
 6. **Verify.** Checks its own output against [inert/1](SPEC.md).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YOUR_GITHUB/inert/main/assets/phishing-before-after.png" alt="A fake 'shared document' login page before and after inert. The look is kept, but the form, password field, hidden script and tracking pixel are removed." width="88%">
+  <img src="https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/phishing-before-after.png" alt="A fake 'shared document' login page before and after inert. The look is kept, but the form, password field, hidden script and tracking pixel are removed." width="88%">
 </p>
 
 ### What you keep, what you lose

@@ -5,7 +5,7 @@ Thanks for helping. inert is small on purpose, and a few rules keep it that way.
 ## Setup
 
 ```bash
-git clone https://github.com/YOUR_GITHUB/inert && cd inert
+git clone https://github.com/Hobglobin/inerthtml && cd inerthtml
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 playwright install chromium
