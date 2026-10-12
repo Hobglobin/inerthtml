@@ -111,8 +111,9 @@ Download the file for where you use Claude from the
   in Claude's settings under Skills. Code execution must be turned on.
   [How to add a skill](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 - **Claude Cowork:** download `inerthtml.plugin` and add it as a plugin.
-- **Whole team (Team and Enterprise admins):** upload `inerthtml-skill.zip` once
-  under Organization settings to give it to everyone.
+- **Whole team (Team and Enterprise admins):** if your admin console has a
+  skills or plugins section under Organization settings, upload
+  `inerthtml-skill.zip` there once to give it to everyone.
   [Admin guide](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization).
 - **Claude Code:** copy [`skills/inerthtml`](skills/inerthtml) into
   `~/.claude/skills/`.
