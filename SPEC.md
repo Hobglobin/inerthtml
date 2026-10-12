@@ -1,6 +1,6 @@
 # The inert/1 profile
 
-**Status:** draft, version 1 · **Editors:** the inert contributors · **License:** CC-BY 4.0
+**Status:** draft, version 1 · **Editors:** the inerthtml contributors · **License:** CC-BY 4.0
 
 An *inert HTML document* is an ordinary HTML file that any browser can open,
 but that cannot run code, load anything from the network, or send anything
@@ -8,7 +8,7 @@ anywhere. It is meant for documents: reports, dashboards, write-ups and
 AI-generated pages that people want to share as a file.
 
 This document lists the rules. A file that follows them **passes**; anything
-else **fails**. `inert verify` (Python) and `docs/inert.js` (browser) are
+else **fails**. `inerthtml verify` (Python) and `docs/inert.js` (browser) are
 reference checkers.
 
 The key words MUST, MUST NOT and MAY are used as described in RFC 2119.
@@ -146,7 +146,7 @@ attribute whose value contains `url(` (for example SVG `fill`, `filter`,
 - **What it does not protect against:** the *content itself*. An inert file
   can still say "call this number" or show a link to a phishing site. Links
   are allowed (§5.1) so that documents can cite sources. Use
-  `inert build --strip-links` when links aren't needed.
+  `inerthtml build --strip-links` when links aren't needed.
 - **Tampering:** anyone can edit an inert file. Editing it to add active
   content makes it fail verification, so receivers should verify, not trust.
   Proof of authorship (signatures) is planned for a later profile.

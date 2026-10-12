@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>inert: check any HTML file before you open it</title>
+<title>inerthtml: check any HTML file before you open it</title>
 <meta name="description" content="Drop an HTML file to see if it can run code, phone home or phish you. Get a safe, script-free copy. Runs entirely in your browser.">
-<meta property="og:title" content="inert: HTML that looks the same but can't do anything">
+<meta property="og:title" content="inerthtml: HTML that looks the same but can't do anything">
 <meta property="og:description" content="Turn AI-generated HTML into a static, script-free file that is safe to share. Same look, no scripts, verifiable.">
 <meta property="og:image" content="https://hobglobin.github.io/inerthtml/social-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -71,10 +71,10 @@ a{color:var(--accent)}
 <main>
   <div class="brand">
     <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 9h10M8 13h10M8 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    inert
+    inerthtml
   </div>
   <h1>Is this HTML file safe to open?</h1>
-  <p class="lede">Drop in any <code>.html</code> file. inert checks whether it can run code, load trackers or collect passwords, then gives you a copy that looks the same but can't do any of those things.</p>
+  <p class="lede">Drop in any <code>.html</code> file. inerthtml checks whether it can run code, load trackers or collect passwords, then gives you a copy that looks the same but can't do any of those things.</p>
 
   <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose an HTML file to check">
     <strong>Drop an HTML file here</strong>
@@ -114,8 +114,8 @@ a{color:var(--accent)}
   <pre><code>pip install inerthtml
 playwright install chromium
 
-inert build report.html          # → report.inert.html
-inert verify report.inert.html   # exit code 1 if unsafe</code></pre>
+inerthtml build report.html          # → report.inert.html
+inerthtml verify report.inert.html   # exit code 1 if unsafe</code></pre>
 
   <footer>
     <a href="https://github.com/Hobglobin/inerthtml">GitHub</a>

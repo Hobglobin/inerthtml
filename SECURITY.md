@@ -1,13 +1,13 @@
 # Security
 
-inert is a security tool, so bypasses are the most valuable bugs you can find.
+inerthtml is a security tool, so bypasses are the most valuable bugs you can find.
 
 ## What counts as a vulnerability
 
-- A file that **passes `inert verify`** (Python or the web checker) but can
+- A file that **passes `inerthtml verify`** (Python or the web checker) but can
   run script, load a network resource, submit data, or navigate on its own
   in a current browser.
-- `inert build` producing output that does any of the above, even if
+- `inerthtml build` producing output that does any of the above, even if
   `verify` catches it.
 - The web checker running code from a file it was given.
 

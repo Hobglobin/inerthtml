@@ -27,7 +27,7 @@ dependencies = ["beautifulsoup4>=4.12", "html5lib>=1.1", "playwright>=1.40"]
 dev = ["pytest>=7"]
 
 [project.scripts]
-inert = "inerthtml.cli:main"
+inerthtml = "inerthtml.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Hobglobin/inerthtml"

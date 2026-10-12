@@ -1,11 +1,11 @@
 ---
-name: inert
+name: inerthtml
 description: Make an HTML file safe to share as a file. Use after creating an HTML report, dashboard or page that will be sent, attached, downloaded or shared outside a hosted link, or when asked to check whether an HTML file is safe to open.
 ---
 
-# inert: share HTML as a safe, static file
+# inerthtml: share HTML as a safe, static file
 
-`inert` turns an HTML page into one self-contained file that looks the same
+`inerthtml` turns an HTML page into one self-contained file that looks the same
 but cannot run scripts, load anything from the network, or submit data. It
 also checks any HTML file against those rules (the inert/1 profile).
 
@@ -24,8 +24,8 @@ also checks any HTML file against those rules (the inert/1 profile).
 
 ```bash
 pip install inerthtml && playwright install chromium   # first time only
-inert build report.html          # writes report.inert.html
-inert verify report.inert.html   # must print PASS
+inerthtml build report.html          # writes report.inert.html
+inerthtml verify report.inert.html   # must print PASS
 ```
 
 - Charts that animate in: add `--wait 3000`.
@@ -37,7 +37,7 @@ listed problems; never hand over a file that failed.
 
 ## When asked "is this HTML file safe?"
 
-Run `inert verify FILE` (it parses the file and never runs it) and explain
+Run `inerthtml verify FILE` (it parses the file and never runs it) and explain
 each problem in plain language, for example "it contains a form that sends
 what you type to another site". A PASS means the file can't run code or send
 data. It doesn't mean the text in it is true.

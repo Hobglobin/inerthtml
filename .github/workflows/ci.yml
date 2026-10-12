@@ -20,4 +20,4 @@ jobs:
       - run: playwright install --with-deps chromium
       - run: pytest -q
       - name: Shipped examples are inert
-        run: inert verify examples/*.inert.html
+        run: inerthtml verify examples/*.inert.html

@@ -1,5 +1,5 @@
 """
-Core of inert: render -> freeze -> inline -> sanitize -> verify.
+Core of inerthtml: render -> freeze -> inline -> sanitize -> verify.
 
 An *inert HTML* file is a single, self-contained HTML document that a normal
 browser displays exactly as written, but that cannot run code, load anything
@@ -432,7 +432,7 @@ def sanitize(html: str, base: str = "about:blank", strip_links: bool = False,
         soup.new_tag("meta", attrs={"charset": "utf-8"}),
         soup.new_tag("meta", attrs={"http-equiv": "Content-Security-Policy", "content": CSP}),
         soup.new_tag("meta", attrs={"name": "inert-profile", "content": PROFILE}),
-        soup.new_tag("meta", attrs={"name": "generator", "content": f"inert {__version__}"}),
+        soup.new_tag("meta", attrs={"name": "generator", "content": f"inerthtml {__version__}"}),
         helper,
     ]):
         head.insert(0, node)

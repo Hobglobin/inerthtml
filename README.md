@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/hero.png" alt="A sample RFI workflow report before and after inert: identical look, but 4 scripts, a login form, a tracking pixel and an iframe are gone, and verify passes." width="100%">
+  <img src="https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/hero.png" alt="A sample RFI workflow report before and after inerthtml: identical look, but 4 scripts, a login form, a tracking pixel and an iframe are gone, and verify passes." width="100%">
 </p>
 
-<h1 align="center">inert</h1>
+<h1 align="center">inerthtml</h1>
 
 <p align="center">
   <b>HTML that looks the same but can't do anything.</b><br>
@@ -30,7 +30,7 @@ charts and layout. Sharing that HTML is the problem:
 - **PDF export loses fidelity.** Page breaks cut through layouts, print styles
   change how things look, and the result stops being a web page.
 
-**inert** keeps the HTML and removes everything that can act. What you get
+**inerthtml** keeps the HTML and removes everything that can act. What you get
 looks the same, opens in any browser, works offline, and comes with a rule set
 ([inert/1](SPEC.md)) that anyone can check.
 
@@ -40,14 +40,14 @@ looks the same, opens in any browser, works offline, and comes with a rule set
 pip install inerthtml
 playwright install chromium        # one-time, for rendering charts
 
-inert build report.html            # → report.inert.html
-inert verify report.inert.html     # ✓ PASS (exit code 1 on failure)
+inerthtml build report.html            # → report.inert.html
+inerthtml verify report.inert.html     # ✓ PASS (exit code 1 on failure)
 ```
 
 Prefer not to install anything? **[Drop a file on the web checker](https://hobglobin.github.io/inerthtml/)**.
 It runs entirely in your browser and never uploads the file.
 
-## What `inert build` does
+## What `inerthtml build` does
 
 1. **Render.** Opens the page in headless Chromium and lets its JavaScript
    draw: D3, ECharts, Plotly, Vega, Chart.js and so on.
@@ -63,7 +63,7 @@ It runs entirely in your browser and never uploads the file.
 6. **Verify.** Checks its own output against [inert/1](SPEC.md).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/phishing-before-after.png" alt="A fake 'shared document' login page before and after inert. The look is kept, but the form, password field, hidden script and tracking pixel are removed." width="88%">
+  <img src="https://raw.githubusercontent.com/Hobglobin/inerthtml/main/assets/phishing-before-after.png" alt="A fake 'shared document' login page before and after inerthtml. The look is kept, but the form, password field, hidden script and tracking pixel are removed." width="88%">
 </p>
 
 ### What you keep, what you lose
@@ -85,7 +85,7 @@ It runs entirely in your browser and never uploads the file.
 rules, so you can use it on files you don't trust:
 
 ```console
-$ inert verify suspicious.html
+$ inerthtml verify suspicious.html
 ✗ FAIL  suspicious.html
     - event handler onload on <body>
     - forbidden <input type=password>
@@ -99,14 +99,14 @@ Use `--json` for CI, mail filters or scripts.
 
 ## Use it with AI agents
 
-**Claude Code / Claude skills:** copy [`skills/inert`](skills/inert) into your
+**Claude Code / Claude skills:** copy [`skills/inerthtml`](skills/inerthtml) into your
 skills folder. When Claude makes an HTML report you plan to share, it will
 build an inert copy and check it.
 
 **Any agent:** add this to your system prompt or project instructions:
 
 > When you create an HTML file meant to be shared, render charts as SVG, then
-> run `inert build <file>` and share the resulting `.inert.html` file.
+> run `inerthtml build <file>` and share the resulting `.inert.html` file.
 
 **Python:**
 
@@ -120,9 +120,9 @@ assert problems == []
 ## CLI reference
 
 ```
-inert build INPUT... [-o OUT | --out-dir DIR] [--width 1280] [--wait 2000]
+inerthtml build INPUT... [-o OUT | --out-dir DIR] [--width 1280] [--wait 2000]
                      [--scale 2] [--no-render] [--strip-links] [--offline]
-inert verify FILE... [--json]
+inerthtml verify FILE... [--json]
 ```
 
 | Option | Meaning |
@@ -138,22 +138,22 @@ inert verify FILE... [--json]
 
 | | Opens in any browser | Keeps JS-drawn charts | No scripts | Checkable rule set |
 |---|---|---|---|---|
-| **inert** | ✓ | ✓ | ✓ | ✓ ([inert/1](SPEC.md)) |
+| **inerthtml** | ✓ | ✓ | ✓ | ✓ ([inert/1](SPEC.md)) |
 | PDF export | ✓ (PDF viewer) | ✓ | mostly | ✗ |
 | [SingleFile](https://github.com/gildas-lormeau/singlefile) | ✓ | ✓ | optional | ✗ |
 | [Monolith](https://github.com/snshn/monolith) `-j -I` | ✓ | ✗ (doesn't run JS) | ✓ | ✗ |
 | [PortableWeb](https://portableweb.org/) `.pweb` | needs a viewer | ✓ | ✗ (sandboxed JS) | in progress |
 | Hosted links (Pages, share services) | ✓ | ✓ | ✗ | ✗ |
 
-SingleFile and Monolith are excellent page archivers, and inert borrows ideas
-from both. The difference is the goal: inert is built to make **documents you
+SingleFile and Monolith are excellent page archivers, and inerthtml borrows ideas
+from both. The difference is the goal: inerthtml is built to make **documents you
 share**, with a written rule set and a verifier anyone can run.
 
 ## FAQ
 
 **Can't someone just edit the file and add a script back?**
 Yes, anyone can edit any file. They can't do it *undetected*: the edited file
-fails `inert verify`, and the CSP still blocks scripts unless they remove it
+fails `inerthtml verify`, and the CSP still blocks scripts unless they remove it
 too. Verify, don't trust. Signing is on the roadmap.
 
 **Will email stop flagging it?**
@@ -162,7 +162,7 @@ so gateways and mail clients can tell inert files apart. For now, a link or a
 zip is often the smoothest way to share.
 
 **Is the content safe now?**
-inert makes sure the file can't *do* anything. It can't make the text
+inerthtml makes sure the file can't *do* anything. It can't make the text
 truthful: a file can still say "call this number". Use `--strip-links` if
 links aren't needed.
 
@@ -171,10 +171,10 @@ Fonts and images are embedded. Google Fonts in particular ship many subsets.
 
 ## Roadmap
 
-- [ ] `npx inert` (Node port of the CLI)
+- [ ] `npx inerthtml` (Node port of the CLI)
 - [ ] Browser extension: right-click → "open as inert"
 - [ ] Font subsetting for smaller files
-- [ ] Optional detached signatures (`inert sign` / `inert verify --sig`)
+- [ ] Optional detached signatures (`inerthtml sign` / `inerthtml verify --sig`)
 - [ ] Full sanitize-and-embed in the web checker
 
 Ideas and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).

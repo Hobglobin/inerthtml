@@ -1,4 +1,4 @@
-"""inert: turn AI-generated HTML into a static, script-free file that is safe to share."""
+"""inerthtml: turn AI-generated HTML into a static, script-free file that is safe to share."""
 
 __version__ = "0.1.0"
 

@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. inert is small on purpose, and a few rules keep it that way.
+Thanks for helping. inerthtml is small on purpose, and a few rules keep it that way.
 
 ## Setup
 
@@ -29,4 +29,4 @@ pytest
 
 - More chart-library examples in `examples/` (Plotly, Vega-Lite, Mermaid)
 - Font subsetting to shrink embedded Google Fonts
-- A Node port of the CLI (`npx inert`)
+- A Node port of the CLI (`npx inerthtml`)

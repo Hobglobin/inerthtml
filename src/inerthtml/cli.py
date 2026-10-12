@@ -1,4 +1,4 @@
-"""Command line interface: `inert build` and `inert verify`."""
+"""Command line interface: `inerthtml build` and `inerthtml verify`."""
 
 from __future__ import annotations
 
@@ -12,12 +12,12 @@ from . import __version__
 from .core import build, to_url, verify
 
 EPILOG = """examples:
-  inert build report.html                  # -> report.inert.html
-  inert build report.html -o shared.html --width 1200 --wait 3000
-  inert build https://example.com/page -o page.inert.html
-  inert build report.html --no-render      # sanitize only, no browser
-  inert verify report.inert.html           # exit code 1 if it fails
-  inert verify *.html --json               # machine-readable results
+  inerthtml build report.html                  # -> report.inert.html
+  inerthtml build report.html -o shared.html --width 1200 --wait 3000
+  inerthtml build https://example.com/page -o page.inert.html
+  inerthtml build report.html --no-render      # sanitize only, no browser
+  inerthtml verify report.inert.html           # exit code 1 if it fails
+  inerthtml verify *.html --json               # machine-readable results
 """
 
 
@@ -85,10 +85,10 @@ def cmd_verify(args) -> int:
 
 def main(argv=None) -> None:
     ap = argparse.ArgumentParser(
-        prog="inert",
+        prog="inerthtml",
         description="Turn HTML into a static, script-free file that is safe to share.",
         epilog=EPILOG, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--version", action="version", version=f"inert {__version__}")
+    ap.add_argument("--version", action="version", version=f"inerthtml {__version__}")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     b = sub.add_parser("build", help="render, freeze and sanitize HTML into an inert file")

@@ -249,7 +249,7 @@
     const style = doc.createElement('style');
     style.textContent = HELPER_CSS;
     head.prepend(mk({ charset: 'utf-8' }), mk({ 'http-equiv': 'Content-Security-Policy', content: CSP }),
-      mk({ name: 'inert-profile', content: PROFILE }), mk({ name: 'generator', content: 'inert-web 0.1.0' }), style);
+      mk({ name: 'inert-profile', content: PROFILE }), mk({ name: 'generator', content: 'inerthtml-web 0.1.0' }), style);
 
     const out = '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
     return { html: out, stats, problems: verify(out) };
